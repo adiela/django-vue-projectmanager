@@ -19,6 +19,13 @@ class BaseModel(models.Model):
     class Meta:
         abstract = True  # This makes the model abstract and prevents database table creation
 
+    def save(self, *args, **kwargs):
+        # Check if 'user' is passed in kwargs
+        user = kwargs.pop('user', None)
+        if user and not self.pk:  # Only set created_by on creation
+            self.created_by = user
+        super(BaseModel, self).save(*args, **kwargs)
+
 class Project(BaseModel):
     name = models.CharField(max_length=100)
     description = models.TextField(blank=True, null=True)
