@@ -1,5 +1,6 @@
+import uuid
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from django.contrib.auth.models import AbstractUser, BaseUserManager
 
 # User Manager
 class UserManager(BaseUserManager):
@@ -22,14 +23,10 @@ class UserManager(BaseUserManager):
         return self.create_user(email, username, password, **extra_fields)
 
 # User Model
-class User(AbstractBaseUser):
-    username = models.CharField(max_length=255, unique=True)
+class User(AbstractUser):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    username = models.CharField(max_length=20, unique=True)
     email = models.EmailField(unique=True)
-    first_name = models.CharField(max_length=255)
-    last_name = models.CharField(max_length=255)
-    is_active = models.BooleanField(default=True)
-    is_staff = models.BooleanField(default=False)
-    is_superuser = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
