@@ -13,42 +13,18 @@ class TaskViewSet(viewsets.ModelViewSet):
 
 # Project Member ViewSet
 class ProjectMemberViewSet(viewsets.ModelViewSet):
+    queryset = ProjectMember.objects.all()
     serializer_class = ProjectMemberSerializer
-
-    def get_queryset(self):
-        project_id = self.kwargs['project_id']
-        queryset = Project.objects.get(id=project_id).members.all()
-
-        if self.kwargs.get('member_id'):
-            return queryset.members.filter(id=self.kwargs['member_id'])
-
-        return queryset
 
 # Task Assignee ViewSet
 class TaskAssigneeViewSet(viewsets.ModelViewSet):
+    queryset = TaskAssignee.objects.all()
     serializer_class = TaskAssigneeSerializer
-
-    def get_queryset(self):
-        task_id = self.kwargs['task_id']
-        queryset = Task.objects.get(id=task_id).assignees.all()
-
-        if self.kwargs.get('assignee_id'):
-            return queryset.assignees.filter(id=self.kwargs['assignee_id'])
-
-        return queryset
 
 # Comment ViewSet
 class CommentViewSet(viewsets.ModelViewSet):
+    queryset = Comment.objects.all()
     serializer_class = CommentSerializer
-
-    def get_queryset(self):
-        task_id = self.kwargs['task_id']
-        queryset = Task.objects.get(id=task_id).comments.all()
-
-        if self.kwargs.get('comment_id'):
-            return queryset.comments.filter(id=self.kwargs['comment_id'])
-
-        return queryset
 
 # Notification ViewSet
 class NotificationViewSet(viewsets.ModelViewSet):
