@@ -41,4 +41,5 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),  # Login endpoint
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'), # Refresh token endpoint
+    path('accounts/', include('allauth.urls')),  # Allauth urls
 ]
