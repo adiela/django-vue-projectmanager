@@ -1,4 +1,4 @@
-from .models import Project, Task, ProjectMember, TaskAssignee, Comment, Notification
+from .models import Project, Task, ProjectMember, TaskAssignee, Comment, Notification, Invitation
 from rest_framework import serializers
 
 class ProjectSerializer(serializers.ModelSerializer):
@@ -29,4 +29,9 @@ class CommentSerializer(serializers.ModelSerializer):
 class NotificationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Notification
+        fields = '__all__'
+
+class InvitationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Invitation
         fields = '__all__'

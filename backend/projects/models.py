@@ -13,7 +13,8 @@ class BaseModel(models.Model):
         on_delete=models.SET_NULL,
         null=True,
         blank=True,
-        related_name="%(class)s_created_by"  # Dynamically include model name
+        related_name="%(class)s_created_by",  # Dynamically include model name
+        editable=False
     )
 
     class Meta:
@@ -99,3 +100,19 @@ class Notification(BaseModel):
 
     def __str__(self):
         return f"Notification for {self.user}: {self.message[:20]}..."
+    
+class Invitation(BaseModel):
+    email = models.EmailField()
+    role = models.CharField(max_length=50, choices=[
+        ('Admin', 'Admin'),
+        ('Member', 'Member')
+    ])
+    accepted = models.BooleanField(default=False)
+    cancelled = models.BooleanField(default=False)
+    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='invitations')
+
+    def __str__(self):
+        return f"{self.email} - {self.project.name}"
+    
+    def valid(self):
+        return not self.accepted and not self.cancelled

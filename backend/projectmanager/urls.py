@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from myauth.views import UserViewSet
-from projects.views import ProjectViewSet, TaskViewSet, ProjectMemberViewSet, TaskAssigneeViewSet, CommentViewSet, NotificationViewSet
+from projects.views import ProjectViewSet, TaskViewSet, ProjectMemberViewSet, TaskAssigneeViewSet, CommentViewSet, NotificationViewSet, InvitationViewSet
 
 # Routers provide an easy way of automatically determining the URL conf.
 router = routers.DefaultRouter()
@@ -29,6 +29,7 @@ router.register(r'notifications', NotificationViewSet)
 router.register(r'projectmembers', ProjectMemberViewSet)
 router.register(r'taskassignees', TaskAssigneeViewSet)
 router.register(r'comments', CommentViewSet)
+router.register(r'invitations', InvitationViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
