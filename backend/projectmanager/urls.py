@@ -16,9 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from rest_framework import routers
 from myauth.views import UserViewSet
 from projects.views import ProjectViewSet, TaskViewSet, ProjectMemberViewSet, TaskAssigneeViewSet, CommentViewSet, NotificationViewSet, InvitationViewSet
+from rest_framework import routers
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
 
 # Routers provide an easy way of automatically determining the URL conf.
 router = routers.DefaultRouter()
@@ -35,4 +39,6 @@ urlpatterns = [
     path('', include(router.urls)),
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),  # Login endpoint
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'), # Refresh token endpoint
 ]
