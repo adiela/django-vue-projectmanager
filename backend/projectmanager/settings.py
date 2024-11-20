@@ -49,10 +49,13 @@ INSTALLED_APPS = [
     'myauth',
     'projects',
     'rest_framework',
+    'rest_framework.authtoken',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.github',
+    'dj_rest_auth',
+    'dj_rest_auth.registration',
 ]
 
 SITE_ID = 1
@@ -69,18 +72,14 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',     
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
     )
 }
 
-SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),  # Token expiration time
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),    # Refresh token expiration
-    'ROTATE_REFRESH_TOKENS': True,
-    'BLACKLIST_AFTER_ROTATION': True,
-    'ALGORITHM': 'HS256',
-    'SIGNING_KEY': 'your_secret_key',               # Replace with your secret key
-    'AUTH_HEADER_TYPES': ('Bearer',),              # Default is 'Bearer'
+REST_AUTH = {
+    'USE_JWT': True,
+    'JWT_AUTH_COOKIE': 'pm-auth',
+    'JWT_AUTH_REFRESH_COOKIE': 'pm-refresh-token',
 }
 
 MIDDLEWARE = [
