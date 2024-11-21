@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from myauth.views import UserViewSet
+from myauth.views import UserViewSet, GitHubLogin
 from projects.views import ProjectViewSet, TaskViewSet, ProjectMemberViewSet, TaskAssigneeViewSet, CommentViewSet, NotificationViewSet, InvitationViewSet
 from rest_framework import routers
 
@@ -36,5 +36,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('api/auth/', include('dj_rest_auth.urls')),
-    path('api/auth/registration/', include('dj_rest_auth.registration.urls')),
+    path('api/auth/registration/', include('dj_rest_auth.registration.urls'), name='rest_auth_register'),
+    path('api/auth/github/', GitHubLogin.as_view(), name='github_login'),
+    path('accounts/', include('allauth.urls')),
 ]
