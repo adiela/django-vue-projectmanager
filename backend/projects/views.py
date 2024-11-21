@@ -27,8 +27,10 @@ class CommentViewSet(viewsets.ModelViewSet):
     serializer_class = CommentSerializer
 
 # Notification ViewSet
-class NotificationViewSet(viewsets.ModelViewSet):
-    queryset = Notification.objects.all()
+class NotificationViewSet( mixins.UpdateModelMixin,
+                   mixins.DestroyModelMixin,
+                   mixins.ListModelMixin,
+                   viewsets.GenericViewSet):
     serializer_class = NotificationSerializer
 
     def get_queryset(self):

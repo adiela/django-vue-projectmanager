@@ -15,7 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from myauth.views import UserViewSet, GitHubLogin
 from projects.views import ProjectViewSet, TaskViewSet, ProjectMemberViewSet, TaskAssigneeViewSet, CommentViewSet, NotificationViewSet, InvitationViewSet
 from rest_framework import routers
@@ -25,11 +25,18 @@ router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
 router.register(r'projects', ProjectViewSet)
 router.register(r'tasks', TaskViewSet)
-router.register(r'notifications', NotificationViewSet)
 router.register(r'projectmembers', ProjectMemberViewSet)
 router.register(r'taskassignees', TaskAssigneeViewSet)
 router.register(r'comments', CommentViewSet)
 router.register(r'invitations', InvitationViewSet)
+
+notification_views_list = NotificationViewSet.as_view({
+    'get': 'list',
+})
+notification_views_detail = NotificationViewSet.as_view({
+    'patch': 'partial_update',
+    'delete': 'destroy',
+})
 
 urlpatterns = [
     path('', include(router.urls)),
@@ -38,5 +45,7 @@ urlpatterns = [
     path('api/auth/', include('dj_rest_auth.urls')),
     path('api/auth/registration/', include('dj_rest_auth.registration.urls'), name='rest_auth_register'),
     path('api/auth/github/', GitHubLogin.as_view(), name='github_login'),
-    path('accounts/', include('allauth.urls')),
+    path('/accounts/', include('allauth.urls')),
+    path('notifications/', notification_views_list, name='notification-list'),
+    path('notifications/<int:pk>/', notification_views_detail, name='notification-detail'),
 ]
