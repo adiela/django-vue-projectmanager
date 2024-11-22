@@ -1,26 +1,6 @@
 <template>
     
 <!-- Section 1 -->
-<section class="w-full px-8 text-gray-700 bg-white">
-    <nav class="container flex flex-col flex-wrap items-center justify-between py-5 mx-auto md:flex-row max-w-7xl">
-        <div class="relative flex flex-col md:flex-row">
-            <a href="#_" class="flex items-center mb-5 font-medium text-gray-900 lg:w-auto lg:items-center lg:justify-center md:mb-0">
-                <span class="mx-auto text-xl font-black leading-none text-gray-900 select-none">Project Manager<span class="text-teal-600">.</span></span>
-            </a>
-        </div>
-
-        <div class="inline-flex items-center ml-5 space-x-6 lg:justify-end">
-            <a href="#" class="text-base font-medium leading-6 text-gray-600 whitespace-no-wrap transition duration-150 ease-in-out hover:text-gray-900">
-                Sign in
-            </a>
-            <a href="#" class="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-teal-600 border border-transparent rounded-md shadow-sm hover:bg-teal-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-600">
-                Sign up
-            </a>
-        </div>
-    </nav>
-</section>
-
-<!-- Section 2 -->
 <section class="px-2 py-32 bg-white md:px-0">
   <div class="container items-center max-w-6xl px-8 mx-auto xl:px-5">
     <div class="flex flex-wrap items-center sm:-mx-3">
@@ -48,7 +28,7 @@
   </div>
 </section>
 
-<!-- Section 3 -->
+<!-- Section 2 -->
 <section class="w-full bg-white pt-7 pb-7 md:pt-20 md:pb-24">
     <div class="box-border flex flex-col items-center content-center px-8 mx-auto leading-6 text-black border-0 border-gray-300 border-solid md:flex-row max-w-7xl lg:px-16">
 
@@ -110,7 +90,7 @@
     </div>
 </section>
 
-<!-- Section 4 -->
+<!-- Section 3 -->
 <section class="py-20 bg-gray-50">
   <div class="container items-center max-w-6xl px-4 px-10 mx-auto sm:px-20 md:px-32 lg:px-16">
     <div class="flex flex-wrap items-center -mx-3">
@@ -139,12 +119,4 @@
   </div>
 </section>
 
-<!-- Footer -->
-<footer class="bg-white">
-    <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
-        <p class="mt-8 text-base leading-6 text-center text-gray-400">
-            © {{ new Date().getFullYear() }} Built by <a href="https://gtihub.com/adiela" class="text-teal-600">Adiela Abishua</a>. Licensed under the MIT License.
-        </p>
-    </div>
-</footer>
 </template>
