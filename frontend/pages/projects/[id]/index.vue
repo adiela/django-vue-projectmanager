@@ -4,7 +4,9 @@
 		<h1 class="text-2xl font-bold text-center">Team Project Board</h1>
 	</div>
 	<div class="flex flex-grow px-10 mt-4 space-x-6 overflow-x-auto mx-auto">
-		<TaskList v-for="list in Array(3)" />
+		<TaskList title="To Do" />
+		<TaskList title="In Progress" />
+		<TaskList title="Done" />
 	</div>
 </div>
 </template>
