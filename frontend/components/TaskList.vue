@@ -1,5 +1,5 @@
 <template>
-<div class="flex flex-col flex-shrink-0 w-72">
+<div class="flex flex-col flex-shrink-0">
     <div class="flex items-center flex-shrink-0 h-10 px-2">
         <span class="block text-sm font-semibold">Backlog</span>
         <span class="flex items-center justify-center w-5 h-5 ml-2 text-sm font-semibold text-indigo-500 bg-white rounded bg-opacity-30">6</span>
@@ -9,7 +9,7 @@
             </svg>
         </button>
     </div>
-    <div class="flex flex-col pb-2 overflow-auto">
+    <div class="flex flex-col p-4">
         <TaskCard v-for="card in Array(7)" />
     </div>
 </div>
