@@ -19,7 +19,7 @@
         <div class="flex items-center justify-between">
           <label for="password" class="block text-sm/6 font-medium text-gray-900">Password</label>
           <div class="text-sm">
-            <NuxtLink to="#" class="font-semibold text-teal-600 hover:text-teal-500">Forgot password?</NuxtLink>
+            <NuxtLink to="/password_reset" class="font-semibold text-teal-600 hover:text-teal-500">Forgot password?</NuxtLink>
           </div>
         </div>
         <div class="mt-2">
