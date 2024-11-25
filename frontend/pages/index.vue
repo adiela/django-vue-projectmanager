@@ -1,8 +1,8 @@
 <template>
 
-  <div>
+  <div class="bg-white">
     <!-- Section 1 -->
-    <section class="px-2 py-32 bg-white md:px-0">
+    <section class="px-2 py-32 md:px-0">
       <div class="container items-center max-w-6xl px-8 mx-auto xl:px-5">
         <div class="flex flex-wrap items-center sm:-mx-3">
           <div class="w-full md:w-1/2 md:px-3">
@@ -30,7 +30,7 @@
     </section>
 
     <!-- Section 2 -->
-    <section class="w-full bg-white pt-7 pb-7 md:pt-20 md:pb-24">
+    <section class="w-full py-10">
         <div class="box-border flex flex-col items-center content-center px-8 mx-auto leading-6 text-black border-0 border-gray-300 border-solid md:flex-row max-w-7xl lg:px-16">
 
             <!-- Image -->
@@ -60,7 +60,7 @@
             </div>
             <!-- End  Content -->
         </div>
-        <div class="box-border flex flex-col items-center content-center px-8 mx-auto mt-2 leading-6 text-black border-0 border-gray-300 border-solid md:mt-20 xl:mt-0 md:flex-row max-w-7xl lg:px-16">
+        <div class="box-border flex flex-col items-center content-center px-8 mx-auto mt-2 leading-6 text-black border-0 border-gray-300 border-solid mt-20 md:flex-row max-w-7xl lg:px-16">
 
             <!-- Content -->
             <div class="box-border w-full text-black border-solid md:w-1/2 md:pl-6 xl:pl-32">
@@ -92,7 +92,7 @@
     </section>
 
     <!-- Section 3 -->
-    <section class="py-20 bg-gray-50">
+    <section class="py-20">
       <div class="container items-center max-w-6xl px-4 px-10 mx-auto sm:px-20 md:px-32 lg:px-16">
         <div class="flex flex-wrap items-center -mx-3">
           <div class="order-1 w-full px-3 lg:w-1/2 lg:order-0">
