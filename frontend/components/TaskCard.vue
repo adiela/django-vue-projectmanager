@@ -21,7 +21,8 @@
                     <span class="ml-1 leading-none">{{ this.task.comment_count }}</span>
                 </div>
                 <div class="ml-auto flex">
-                    <img v-for="assignee in this.task.assignees" class="w-6 h-6 -ml-2.5 rounded-full" :src="assignee.avatar" />
+                    <img v-if="this.task.assignees.length == 1" class="w-6 h-6 rounded-full" :src="this.task.assignees[0].avatar" />
+                    <img v-if="this.task.assignees.length > 1" v-for="assignee in this.task.assignees" class="w-6 h-6 -ml-2.5 rounded-full" :src="assignee.avatar" />
                 </div>
                 
             </div>
