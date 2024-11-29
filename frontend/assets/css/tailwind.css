@@ -4,7 +4,13 @@
 
 @layer components {
     .btn {
-      @apply flex justify-center rounded-md px-3 py-1.5 text-sm/6 font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600;
+      @apply flex justify-center rounded-md font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600;
+    }
+    .btn-md {
+        @apply px-3 py-1.5 text-sm/6;
+    }
+    .btn-lg {
+        @apply px-6 py-3 text-lg sm:w-auto font-semibold;
     }
     .btn-primary {
         @apply  bg-teal-600 text-white hover:bg-teal-500;

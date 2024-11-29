@@ -23,10 +23,10 @@
         <input id="password2" name="password2" type="password" autocomplete="current-password" required class="form-input w-full">
       </fieldset>
 
-      <button type="submit" class="btn btn-primary w-full">Sign Up</button>
+      <button type="submit" class="btn btn-md btn-primary w-full">Sign Up</button>
          
     </form>
-    <button type="button" class="btn btn-outline mt-5 w-full">Sign in with Github</button>
+    <button type="button" class="btn btn-md btn-outline mt-5 w-full">Sign in with Github</button>
 
 
     <p class="mt-10 text-center text-sm/6 text-gray-500">

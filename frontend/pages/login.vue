@@ -24,9 +24,9 @@
 
       </div>
 
-        <button type="submit" class="btn btn-primary w-full">Sign in</button>
+        <button type="submit" class="btn btn-md btn-primary w-full">Sign in</button>
     </form>
-    <button type="submit" class="btn btn-outline w-full mt-5">Sign in with Github</button>
+    <button type="submit" class="btn btn-md btn-outline w-full mt-5">Sign in with Github</button>
 
     <p class="mt-10 text-center text-sm/6 text-gray-500">
       Don't have an account?
